@@ -7,6 +7,9 @@ import UI from "./modules/ui";
 import Parser from "./modules/parser";
 import API from "./modules/api";
 
+library.add(fas, far, fab);
+dom.watch();
+
 UI.initUI();
 
 (async () => {
@@ -27,6 +30,3 @@ UI.initUI();
         console.log("Failed to fetch forecast data.");
     }
 })();
-
-library.add(fas, far, fab);
-dom.i2svg();

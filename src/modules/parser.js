@@ -31,8 +31,7 @@ export default class Parser {
                 minTemp: day.day.mintemp_c,
                 avgTemp: day.day.avgtemp_c,
                 humidity: day.day.avghumidity,
-                wind: day.day.maxwind_kph,
-                windDirection: day.day.maxwind_dir
+                wind: day.day.maxwind_kph
             };
         });
     }

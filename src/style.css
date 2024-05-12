@@ -73,3 +73,64 @@ header form #submit-location-btn {
 header form #submit-location-btn:hover {
     background: linear-gradient(90deg, #523D7F, 0%, #957DCD 100%);
 }
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.main__weather__card {
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 64px;
+    padding: 16px;
+    margin: 8px 0;
+    width: 20%;
+}
+
+.main__weather__card h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.main__weather__card .weather__condition {
+    font-size: 1.2rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__weather__card .weather__condition p {
+    margin: 0;
+}
+
+.main__weather__card .weather__temperature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.forecast__container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 16px;
+}
+
+.forecast__card {
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+}

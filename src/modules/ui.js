@@ -62,29 +62,46 @@ export default class UI {
 
     static renderWeather(data) {
         const weatherContainer = document.querySelector(".weather-container");
-        weatherContainer.innerHTML = `
+        const mainWeatherCard = document.createElement("div");
+
+        mainWeatherCard.classList.add("main__weather__card");
+        mainWeatherCard.innerHTML = `
             <div class="weather__location">
-                <h1 class="weather__city">${data.city}</h1>
-                <p class="weather__region">${data.country}</p>
+                <h1 class="weather__city"><i class="fa-solid fa-location-dot"></i> ${data.city}, ${data.country}</h1>
             </div>
             <div class="weather__condition">
-                <img class="weather__icon" src="${data.icon}" alt="${data.condition}">
+                <div class="weather__temperature">
+                    <img class="weather__icon" src="${data.icon}" alt="${data.condition}">
+                    <p class="weather__temp">${data.temperature}°C</p>
+                </div>
                 <p class="weather__text">${data.condition}</p>
             </div>
-            <div class="weather__temperature">
-                <p class="weather__temp">${data.temperature}°C</p>
-                <p class="weather__feels-like">Feels like ${data.feelsLike}°C</p>
+            <div class="weather__feelslike">
+                <p><i class="fa-solid fa-temperature-three-quarters"></i> Feels like ${data.feelsLike}°C</p>
             </div>
             <div class="weather__details">
-                <p class="weather__humidity">Humidity: ${data.humidity}%</p>
-                <p class="weather__wind">Wind: ${data.wind} km/h ${data.windDirection}</p>
-                <p class="weather__updated">Last updated: ${data.lastUpdated}</p>
+                <p class="weather__humidity"><i class="fa-solid fa-water"></i> Humidity: ${data.humidity}%</p>
+                <p class="weather__wind"><i class="fa-solid fa-wind"></i> Wind: ${data.wind} km/h</p>
+                <p class="weather__updated"><i class="fa-solid fa-pen-clip"></i> Last updated: ${data.lastUpdated}</p>
             </div>
         `;
+
+        weatherContainer.innerHTML = "";
+        weatherContainer.appendChild(mainWeatherCard);
     }
 
     static renderForecast(data) {
-        const forecastContainer = document.querySelector(".weather-container");
+        const weatherContainer = document.querySelector(".weather-container");
+
+        const forecastTitle = document.createElement("h2");
+        forecastTitle.classList.add("forecast__title");
+        forecastTitle.innerHTML = `<i class="fa-solid fa-calendar"></i> 7-Day Forecast`;
+        weatherContainer.appendChild(forecastTitle);
+
+        const forecastContainer = document.createElement("div");
+        forecastContainer.classList.add("forecast__container");
+        weatherContainer.appendChild(forecastContainer);
+
         data.forEach((day) => {
             const forecastCard = document.createElement("div");
             forecastCard.classList.add("forecast__card");
@@ -92,20 +109,15 @@ export default class UI {
                 <p class="forecast__date">${day.date}</p>
                 <div class="forecast__condition">
                     <img class="forecast__icon" src="${day.icon}" alt="${day.condition}">
-                    <p class="forecast__
-                    text">${day.condition}</p>
+                    <p class="forecast__text">${day.condition}</p>
                 </div>
                 <div class="forecast__temperature">
-                    <p class="forecast__
-                    temp">${day.maxTemp}°C</p>
-                    <p class="forecast__
-                    temp">${day.minTemp}°C</p>
+                    <p class="forecast__temp"><i class="fa-solid fa-temperature-full"></i> Max: ${day.maxTemp}°C</p>
+                    <p class="forecast__temp"><i class="fa-solid fa-temperature-empty"></i> Min: ${day.minTemp}°C</p>
                 </div>
                 <div class="forecast__details">
-                    <p class="forecast__
-                    humidity">Humidity: ${day.humidity}%</p>
-                    <p class="forecast__
-                    wind">Wind: ${day.wind} km/h ${day.windDirection}</p>
+                    <p class="forecast__humidity"><i class="fa-solid fa-water"></i> Humidity: ${day.humidity}%</p>
+                    <p class="forecast__wind"><i class="fa-solid fa-wind"></i> Wind: ${day.wind} km/h</p>
                 </div>
             `;
             forecastContainer.appendChild(forecastCard);
