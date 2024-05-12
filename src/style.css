@@ -1,0 +1,75 @@
+body {
+    font-family: 'Ubuntu Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #352163, 0%, #331972, 58%, #33143C 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #FEFEFE;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 20px 0 4px 0;
+}
+
+header p {
+    font-size: 0.9rem;
+    margin: 0 0 8px 0;
+
+}
+
+header hr {
+    width: 40%;
+    border: 3px solid #FEFEFE;
+    border-radius: 64px;
+}
+
+header form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0;
+}
+
+header form input {
+    box-sizing: border-box;
+    width: 20%;
+    padding: 8px;
+    margin: 8px 0;
+    border: none;
+    height: 40px;
+    border-radius: 32px 0 0 32px;
+    font-size: 1.2rem;
+    color: #352163;
+}
+
+header form input:focus {
+    outline: none;
+}
+
+header form #submit-location-btn {
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #957DCD, 0%, #523D7F 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: none;
+    border-radius: 0 32px 32px 0;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    cursor: pointer;
+}
+
+header form #submit-location-btn:hover {
+    background: linear-gradient(90deg, #523D7F, 0%, #957DCD 100%);
+}
